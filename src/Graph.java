@@ -59,4 +59,6 @@ public class Graph {
     public void setSavingPairsList(List<SavingPairs> SavingPairsList) {
         this.SavingPairsList = SavingPairsList;
     }
+
+
 }
