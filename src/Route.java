@@ -3,29 +3,29 @@ import java.util.List;
 
 public class Route {
 
-    private double totalsaving;
-    private Vertex startVertex;
-    private Vertex targetVertex;
+    private double totaldistance;
+    //private Vertex startVertex;
+    //private Vertex targetVertex;
     private double totaldemand;
     private double savings;
-    private List<Vertex> assignedVertices;
+    private List<Vertex> orderedVertices;
 
     Route() {
-        assignedVertices = new ArrayList<Vertex>();
+        orderedVertices = new ArrayList<Vertex>();
         totaldemand = 0;
         savings = 0;
     }
 
-    public double getTotalsaving() {
-        return totalsaving;
+    public double getTotaldistance() {
+        return totaldistance;
     }
 
     public Vertex getStartVertex() {
-        return startVertex;
+        return orderedVertices.get(0);
     }
 
     public Vertex getTargetVertex() {
-        return targetVertex;
+        return orderedVertices.get(orderedVertices.size()-1);
     }
 
     public double getTotaldemand() {
@@ -41,15 +41,15 @@ public class Route {
     }
 
     void AddRoute(Vertex vertex){
-        this.assignedVertices.add(vertex);
+        this.orderedVertices.add(vertex);
 
    }
    void Remove(Vertex vertex){
-        this.assignedVertices.remove(vertex);
+        this.orderedVertices.remove(vertex);
    }
 
    boolean Contains(Vertex vertex){
-        this.assignedVertices.contains(vertex);
+        this.orderedVertices.contains(vertex);
        return true;
    }
 
@@ -58,7 +58,7 @@ public class Route {
    }
     @Override
     public String toString() {
-        return String.valueOf(assignedVertices);
+        return String.valueOf(orderedVertices);
     }
 
 }

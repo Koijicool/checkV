@@ -1,16 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 //this class is a graph, the graph manages add vertices and add  Saving Pairs.
 // we also make measure distance method, and calculate saving here.
 
 public class Graph {
 
     private List<Vertex> vertices;
-    private List<SavingPairs> SavingPairsList;
+    private PriorityQueue<SavingPairs> SavingPairsList;
+    private List<Route> ListofRoutes;
+    private Vertex Depot;
+
+    public void setDepot(Vertex depot) {
+        Depot = depot;
+    }
+
+    public Vertex getDepot() {
+        return Depot;
+    }
 
     public Graph() {
         this.vertices = new ArrayList<>();
-        this.SavingPairsList = new ArrayList<>();
+        this.SavingPairsList = new PriorityQueue<>();
+        this.ListofRoutes = new ArrayList<>();
     }
 
     public void addVertex(Vertex vertex) {
@@ -52,11 +64,11 @@ public class Graph {
     }
 
 
-    public List<SavingPairs> getSavingPairsList() {
+    public PriorityQueue<SavingPairs> getSavingPairsList() {
         return SavingPairsList;
     }
 
-    public void setSavingPairsList(List<SavingPairs> SavingPairsList) {
+    public void setSavingPairsList(PriorityQueue<SavingPairs> SavingPairsList) {
         this.SavingPairsList = SavingPairsList;
     }
 

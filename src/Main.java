@@ -77,6 +77,7 @@ public class Main {
             Vertex v = new Vertex(Integer.parseInt(line[0]), Double.parseDouble(line[1]), Double.parseDouble(line[2]), Double.parseDouble(line[3]));
             graph.addVertex(v);
         }
+        graph.setDepot(graph.getVertices().get(0));
          //   for (Vertex i : graph.getVertices())
            //     for (Vertex j : graph.getVertices()) {
         for(int i=1; i<graph.getVertices().size();i++){

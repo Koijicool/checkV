@@ -12,13 +12,13 @@ public class Algorithm {
 // Step 1: calculate saving s(i,j) = d(D,i)+ d(D,j) - d(i,j) we have done it since we input data in  the saving Pairs
     public Algorithm(Graph graph) {
         this.vertices = graph.getVertices();
-        this.Q = new PriorityQueue<SavingPairs>();
+     //   this.Q = new PriorityQueue<SavingPairs>();
         this.SortList = new ArrayList<SavingPairs>();
 // Step 2: Rank the data, in this step we put all saving pair into the priority Q and then sort them decending order of saving
-        for (SavingPairs SavingPairs : graph.getSavingPairsList()) {
-            this.Q.add(SavingPairs);
-        }
-
+        //for (SavingPairs SavingPairs : graph.getSavingPairsList()) {
+        //    this.Q.add(SavingPairs);
+       // }
+        Q= graph.getSavingPairsList();
         while (!Q.isEmpty()) {
             // System.out.println(Q.poll());
             SavingPairs getout = Q.poll();
